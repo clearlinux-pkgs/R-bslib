@@ -4,7 +4,7 @@
 #
 Name     : R-bslib
 Version  : 0.2.4
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/bslib_0.2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bslib_0.2.4.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
@@ -12,9 +12,11 @@ Group    : Development/Tools
 License  : BSD-3-Clause MIT
 Requires: R-digest
 Requires: R-htmltools
+Requires: R-jquerylib
 Requires: R-jsonlite
 Requires: R-magrittr
 Requires: R-rlang
+Requires: R-sass
 BuildRequires : R-digest
 BuildRequires : R-htmltools
 BuildRequires : R-jquerylib
@@ -42,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1611775863
+export SOURCE_DATE_EPOCH=1611778134
 
 %install
-export SOURCE_DATE_EPOCH=1611775863
+export SOURCE_DATE_EPOCH=1611778134
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
