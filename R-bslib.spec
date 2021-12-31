@@ -4,7 +4,7 @@
 #
 Name     : R-bslib
 Version  : 0.3.1
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/bslib_0.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bslib_0.3.1.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
@@ -40,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640904096
+export SOURCE_DATE_EPOCH=1640985506
 
 %install
-export SOURCE_DATE_EPOCH=1640904096
+export SOURCE_DATE_EPOCH=1640985506
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
