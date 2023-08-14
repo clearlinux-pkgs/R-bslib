@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-bslib
-Version  : 0.5.0
-Release  : 19
-URL      : https://cran.r-project.org/src/contrib/bslib_0.5.0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/bslib_0.5.0.tar.gz
+Version  : 0.5.1
+Release  : 20
+URL      : https://cran.r-project.org/src/contrib/bslib_0.5.1.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/bslib_0.5.1.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
@@ -59,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686329481
+export SOURCE_DATE_EPOCH=1692030518
 
 %install
-export SOURCE_DATE_EPOCH=1686329481
+export SOURCE_DATE_EPOCH=1692030518
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-bslib
 cp %{_builddir}/bslib/LICENSE.note %{buildroot}/usr/share/package-licenses/R-bslib/a8486c06ebb6e9b1e40a9a3c36cc32e99b840fd4 || :
@@ -151,25 +151,60 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/bs3compat/js/bs3compat.js
 /usr/lib64/R/library/bslib/bs3compat/js/tabs.js
 /usr/lib64/R/library/bslib/bs3compat/js/transition.js
-/usr/lib64/R/library/bslib/components/_mixins.scss
-/usr/lib64/R/library/bslib/components/_variables.scss
-/usr/lib64/R/library/bslib/components/accordion.min.js
-/usr/lib64/R/library/bslib/components/accordion.min.js.map
-/usr/lib64/R/library/bslib/components/accordion.scss
-/usr/lib64/R/library/bslib/components/card.min.js
-/usr/lib64/R/library/bslib/components/card.min.js.map
-/usr/lib64/R/library/bslib/components/card.scss
-/usr/lib64/R/library/bslib/components/fill.scss
-/usr/lib64/R/library/bslib/components/layout_column_wrap.scss
-/usr/lib64/R/library/bslib/components/layout_columns.scss
-/usr/lib64/R/library/bslib/components/sidebar.min.js
-/usr/lib64/R/library/bslib/components/sidebar.min.js.map
-/usr/lib64/R/library/bslib/components/sidebar.scss
+/usr/lib64/R/library/bslib/bslib-scss/bslib.scss
+/usr/lib64/R/library/bslib/bslib-scss/spacer.scss
+/usr/lib64/R/library/bslib/bslib-scss/tab-fill.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/_mixins.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/_rules.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/_variables.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/font.css
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/ionrangeslider/_rules.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/ionrangeslider/_variables.scss
+/usr/lib64/R/library/bslib/builtin/bs5/shiny/tables/_rules.scss
+/usr/lib64/R/library/bslib/components/dist/accordion/accordion.css
+/usr/lib64/R/library/bslib/components/dist/accordion/accordion.js
+/usr/lib64/R/library/bslib/components/dist/accordion/accordion.js.map
+/usr/lib64/R/library/bslib/components/dist/accordion/accordion.min.js
+/usr/lib64/R/library/bslib/components/dist/accordion/accordion.min.js.map
+/usr/lib64/R/library/bslib/components/dist/bslibShiny/bslibShiny.js
+/usr/lib64/R/library/bslib/components/dist/bslibShiny/bslibShiny.js.map
+/usr/lib64/R/library/bslib/components/dist/bslibShiny/bslibShiny.min.js
+/usr/lib64/R/library/bslib/components/dist/bslibShiny/bslibShiny.min.js.map
+/usr/lib64/R/library/bslib/components/dist/card/card.css
+/usr/lib64/R/library/bslib/components/dist/card/card.js
+/usr/lib64/R/library/bslib/components/dist/card/card.js.map
+/usr/lib64/R/library/bslib/components/dist/card/card.min.js
+/usr/lib64/R/library/bslib/components/dist/card/card.min.js.map
+/usr/lib64/R/library/bslib/components/dist/grid/grid.css
+/usr/lib64/R/library/bslib/components/dist/nav_spacer/nav_spacer.css
+/usr/lib64/R/library/bslib/components/dist/page_fillable/page_fillable.css
+/usr/lib64/R/library/bslib/components/dist/page_navbar/page_navbar.css
+/usr/lib64/R/library/bslib/components/dist/page_sidebar/page_sidebar.css
+/usr/lib64/R/library/bslib/components/dist/sidebar/sidebar.css
+/usr/lib64/R/library/bslib/components/dist/sidebar/sidebar.js
+/usr/lib64/R/library/bslib/components/dist/sidebar/sidebar.js.map
+/usr/lib64/R/library/bslib/components/dist/sidebar/sidebar.min.js
+/usr/lib64/R/library/bslib/components/dist/sidebar/sidebar.min.js.map
+/usr/lib64/R/library/bslib/components/dist/value_box/value_box.css
+/usr/lib64/R/library/bslib/components/dist/webComponents/webComponents.js
+/usr/lib64/R/library/bslib/components/dist/webComponents/webComponents.js.map
+/usr/lib64/R/library/bslib/components/dist/webComponents/webComponents.min.js
+/usr/lib64/R/library/bslib/components/dist/webComponents/webComponents.min.js.map
+/usr/lib64/R/library/bslib/components/scss/accordion.scss
+/usr/lib64/R/library/bslib/components/scss/card.scss
+/usr/lib64/R/library/bslib/components/scss/grid.scss
+/usr/lib64/R/library/bslib/components/scss/mixins/_mixins.scss
+/usr/lib64/R/library/bslib/components/scss/nav_spacer.scss
+/usr/lib64/R/library/bslib/components/scss/page_fillable.scss
+/usr/lib64/R/library/bslib/components/scss/page_navbar.scss
+/usr/lib64/R/library/bslib/components/scss/page_sidebar.scss
+/usr/lib64/R/library/bslib/components/scss/sidebar.scss
+/usr/lib64/R/library/bslib/components/scss/value_box.scss
 /usr/lib64/R/library/bslib/components/tag-require.js
-/usr/lib64/R/library/bslib/components/value_box.scss
 /usr/lib64/R/library/bslib/css-precompiled/3/bootstrap.min.css
 /usr/lib64/R/library/bslib/css-precompiled/4/bootstrap.min.css
 /usr/lib64/R/library/bslib/css-precompiled/5/bootstrap.min.css
+/usr/lib64/R/library/bslib/css-precompiled/5/bootstrap.scss
 /usr/lib64/R/library/bslib/custom/person.scss
 /usr/lib64/R/library/bslib/examples/card/app.R
 /usr/lib64/R/library/bslib/examples/card/deploy.R
@@ -199,6 +234,10 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/fonts/CSR54z1Qlv-GDxkbKVQ_dFsvaNA.woff
 /usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_TOQ.woff
 /usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_fOAKSw.woff
+/usr/lib64/R/library/bslib/fonts/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXhM0.woff
+/usr/lib64/R/library/bslib/fonts/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQhM0.woff
+/usr/lib64/R/library/bslib/fonts/HI_jiYsKILxRpg3hIP6sJ7fM7PqlOPHYvDP_W9O7GQTTbI1rSg.woff
+/usr/lib64/R/library/bslib/fonts/HI_jiYsKILxRpg3hIP6sJ7fM7PqlOPHYvDP_W9O7GQTTsoprSg.woff
 /usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew9.woff
 /usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew9.woff
 /usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w9.woff
@@ -226,18 +265,24 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTA.woff
 /usr/lib64/R/library/bslib/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTA.woff
 /usr/lib64/R/library/bslib/fonts/a98f7a7574819ba83bec6279a2cecd95.woff
+/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWVAexg.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWVAexg.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff
+/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkaVQ.woff
+/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWVAexg.woff
 /usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff
+/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff
+/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQ.woff
 /usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff
+/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0C4k.woff
 /usr/lib64/R/library/bslib/fonts/q5uGsou0JOdh94bfvQlr.woff
 /usr/lib64/R/library/bslib/help/AnIndex
 /usr/lib64/R/library/bslib/help/aliases.rds
@@ -249,6 +294,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/help/figures/navset-tab-basic.png
 /usr/lib64/R/library/bslib/help/figures/navset-tab-card.png
 /usr/lib64/R/library/bslib/help/figures/navset-tab.png
+/usr/lib64/R/library/bslib/help/figures/navset_card_pill.png
 /usr/lib64/R/library/bslib/help/figures/page-navbar.png
 /usr/lib64/R/library/bslib/help/paths.rds
 /usr/lib64/R/library/bslib/html/00Index.html
@@ -767,7 +813,6 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/lib/bsw5/dist/zephyr/_variables.scss
 /usr/lib64/R/library/bslib/lib/bsw5/dist/zephyr/font.css
 /usr/lib64/R/library/bslib/lib/bsw5/package.json
-/usr/lib64/R/library/bslib/nav-spacer/nav-spacer.scss
 /usr/lib64/R/library/bslib/package.json
 /usr/lib64/R/library/bslib/rmarkdown/templates/legacy/skeleton/skeleton.Rmd
 /usr/lib64/R/library/bslib/rmarkdown/templates/legacy/template.yaml
@@ -777,15 +822,22 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/rmarkdown/templates/real-time/template.yaml
 /usr/lib64/R/library/bslib/sass-utils/color-contrast.scss
 /usr/lib64/R/library/bslib/tests/testthat.R
+/usr/lib64/R/library/bslib/tests/testthat/_snaps/bs-theme-preset-builtin.md
+/usr/lib64/R/library/bslib/tests/testthat/_snaps/bs-theme-preset.md
 /usr/lib64/R/library/bslib/tests/testthat/_snaps/fill.md
 /usr/lib64/R/library/bslib/tests/testthat/_snaps/layout.md
 /usr/lib64/R/library/bslib/tests/testthat/_snaps/page.md
+/usr/lib64/R/library/bslib/tests/testthat/_snaps/zzzz-bs-sass.md
 /usr/lib64/R/library/bslib/tests/testthat/_snaps/zzzz-bs-sass/bs4-imports
 /usr/lib64/R/library/bslib/tests/testthat/_snaps/zzzz-bs-sass/bs5-imports
 /usr/lib64/R/library/bslib/tests/testthat/helper-cache.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-css.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-files.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-seed.R
+/usr/lib64/R/library/bslib/tests/testthat/test-bs-theme-preset-bootswatch.R
+/usr/lib64/R/library/bslib/tests/testthat/test-bs-theme-preset-builtin.R
+/usr/lib64/R/library/bslib/tests/testthat/test-bs-theme-preset.R
+/usr/lib64/R/library/bslib/tests/testthat/test-bs-theme.R
 /usr/lib64/R/library/bslib/tests/testthat/test-bs4-deps.R
 /usr/lib64/R/library/bslib/tests/testthat/test-fill.R
 /usr/lib64/R/library/bslib/tests/testthat/test-fonts.R
