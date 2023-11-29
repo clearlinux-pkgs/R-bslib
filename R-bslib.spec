@@ -6,10 +6,10 @@
 # autospec commit: e661f3a
 #
 Name     : R-bslib
-Version  : 0.6.0
-Release  : 22
-URL      : https://cran.r-project.org/src/contrib/bslib_0.6.0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/bslib_0.6.0.tar.gz
+Version  : 0.6.1
+Release  : 23
+URL      : https://cran.r-project.org/src/contrib/bslib_0.6.1.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/bslib_0.6.1.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
@@ -63,10 +63,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1700987178
+export SOURCE_DATE_EPOCH=1701292750
 
 %install
-export SOURCE_DATE_EPOCH=1700987178
+export SOURCE_DATE_EPOCH=1701292750
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-bslib
 cp %{_builddir}/bslib/LICENSE.note %{buildroot}/usr/share/package-licenses/R-bslib/a8486c06ebb6e9b1e40a9a3c36cc32e99b840fd4 || :
@@ -74,6 +74,7 @@ cp %{_builddir}/bslib/inst/lib/bs-a11y-p/LICENSE.md %{buildroot}/usr/share/packa
 cp %{_builddir}/bslib/inst/lib/bs-colorpicker/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/86ce50765f0a3c0942a1546cdde442ff56c05d0e || :
 cp %{_builddir}/bslib/inst/lib/bs3/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/ebcab2dc61dad9f3fbf7867a00b1557da86f2218 || :
 cp %{_builddir}/bslib/inst/lib/bs4/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/1174fef9dbf57763afe6311112cb63f9a0679acd || :
+cp %{_builddir}/bslib/inst/lib/bs5/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/84e0cfb08dfbdc5c6c146c0e57de93c81ef18c56 || :
 cp %{_builddir}/bslib/inst/lib/bsw3/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/94cb9d2782f0f9d8fc1fa7826d44bb60753bbac6 || :
 cp %{_builddir}/bslib/inst/lib/bsw4/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/94cb9d2782f0f9d8fc1fa7826d44bb60753bbac6 || :
 cp %{_builddir}/bslib/inst/lib/bsw5/LICENSE %{buildroot}/usr/share/package-licenses/R-bslib/94cb9d2782f0f9d8fc1fa7826d44bb60753bbac6 || :
@@ -901,6 +902,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/R-bslib/1174fef9dbf57763afe6311112cb63f9a0679acd
 /usr/share/package-licenses/R-bslib/749d4a78e5c5b492bdc10eef93a9e5d9f4c0de0a
+/usr/share/package-licenses/R-bslib/84e0cfb08dfbdc5c6c146c0e57de93c81ef18c56
 /usr/share/package-licenses/R-bslib/86ce50765f0a3c0942a1546cdde442ff56c05d0e
 /usr/share/package-licenses/R-bslib/94cb9d2782f0f9d8fc1fa7826d44bb60753bbac6
 /usr/share/package-licenses/R-bslib/a8486c06ebb6e9b1e40a9a3c36cc32e99b840fd4
