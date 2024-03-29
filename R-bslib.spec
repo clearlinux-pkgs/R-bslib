@@ -6,16 +6,17 @@
 # autospec commit: c02b2fe
 #
 Name     : R-bslib
-Version  : 0.6.2
-Release  : 24
-URL      : https://cran.r-project.org/src/contrib/bslib_0.6.2.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/bslib_0.6.2.tar.gz
+Version  : 0.7.0
+Release  : 25
+URL      : https://cran.r-project.org/src/contrib/bslib_0.7.0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/bslib_0.7.0.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
 Requires: R-bslib-license = %{version}-%{release}
 Requires: R-base64enc
 Requires: R-cachem
+Requires: R-fastmap
 Requires: R-htmltools
 Requires: R-jquerylib
 Requires: R-jsonlite
@@ -26,6 +27,7 @@ Requires: R-rlang
 Requires: R-sass
 BuildRequires : R-base64enc
 BuildRequires : R-cachem
+BuildRequires : R-fastmap
 BuildRequires : R-htmltools
 BuildRequires : R-jquerylib
 BuildRequires : R-jsonlite
@@ -66,10 +68,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1711241637
+export SOURCE_DATE_EPOCH=1711729138
 
 %install
-export SOURCE_DATE_EPOCH=1711241637
+export SOURCE_DATE_EPOCH=1711729138
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-bslib
 cp %{_builddir}/bslib/LICENSE.note %{buildroot}/usr/share/package-licenses/R-bslib/a8486c06ebb6e9b1e40a9a3c36cc32e99b840fd4 || :
@@ -180,6 +182,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/components/dist/web-components.js.map
 /usr/lib64/R/library/bslib/components/dist/web-components.min.js
 /usr/lib64/R/library/bslib/components/dist/web-components.min.js.map
+/usr/lib64/R/library/bslib/components/dist/webComponents/webComponents.min.js
 /usr/lib64/R/library/bslib/components/scss/accordion.scss
 /usr/lib64/R/library/bslib/components/scss/card.scss
 /usr/lib64/R/library/bslib/components/scss/grid.scss
@@ -219,76 +222,157 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/examples/flights/www/logo.png
 /usr/lib64/R/library/bslib/examples/value_box/app.R
 /usr/lib64/R/library/bslib/examples/value_box/deploy.R
-/usr/lib64/R/library/bslib/fonts/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCIPrc.woff
-/usr/lib64/R/library/bslib/fonts/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrc.woff
-/usr/lib64/R/library/bslib/fonts/1adeadb2fe618c5ed46221f15e12b9c8.woff
-/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgo6ew.woff
-/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKfw7w.woff
-/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvTtA.woff
-/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjsGyL.woff
-/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDQ.woff
-/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPa7j.woff
-/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3aPA.woff
-/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7j.woff
-/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rAkw.woff
-/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vAkw.woff
-/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdo.woff
-/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zAkw.woff
-/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdo.woff
-/usr/lib64/R/library/bslib/fonts/CSR54z1Qlv-GDxkbKVQ_dFsvWNRevw.woff
-/usr/lib64/R/library/bslib/fonts/CSR54z1Qlv-GDxkbKVQ_dFsvaNA.woff
-/usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_TOQ.woff
-/usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_fOAKSw.woff
-/usr/lib64/R/library/bslib/fonts/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DBKXhM0.woff
-/usr/lib64/R/library/bslib/fonts/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQhM0.woff
-/usr/lib64/R/library/bslib/fonts/HI_jiYsKILxRpg3hIP6sJ7fM7PqlOPHYvDP_W9O7GQTTbI1rSg.woff
-/usr/lib64/R/library/bslib/fonts/HI_jiYsKILxRpg3hIP6sJ7fM7PqlOPHYvDP_W9O7GQTTsoprSg.woff
-/usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew9.woff
-/usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew9.woff
-/usr/lib64/R/library/bslib/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w9.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fBBc-.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9vAA.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fBBc-.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5vAA.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfBBc-.woff
-/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlvAA.woff
-/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Me5g.woff
-/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu4mxM.woff
-/usr/lib64/R/library/bslib/fonts/QGYpz_kZZAGCONcK2A4bGOj8mNhL.woff
-/usr/lib64/R/library/bslib/fonts/S6u8w4BMUTPHjxsAXC-s.woff
-/usr/lib64/R/library/bslib/fonts/S6u8w4BMUTPHjxswWA.woff
-/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh6UVSwiPHw.woff
-/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh6UVeww.woff
-/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh7USSwiPHw.woff
-/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh7USeww.woff
-/usr/lib64/R/library/bslib/fonts/S6uyw4BMUTPHjx4wWA.woff
-/usr/lib64/R/library/bslib/fonts/S6uyw4BMUTPHvxo.woff
-/usr/lib64/R/library/bslib/fonts/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYMZs.woff
-/usr/lib64/R/library/bslib/fonts/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZs.woff
-/usr/lib64/R/library/bslib/fonts/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZs.woff
-/usr/lib64/R/library/bslib/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTA.woff
-/usr/lib64/R/library/bslib/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTA.woff
-/usr/lib64/R/library/bslib/fonts/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTA.woff
-/usr/lib64/R/library/bslib/fonts/a98f7a7574819ba83bec6279a2cecd95.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWVAexg.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWVAexg.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWVAexg.woff
-/usr/lib64/R/library/bslib/fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQ.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff
-/usr/lib64/R/library/bslib/fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0C4k.woff
-/usr/lib64/R/library/bslib/fonts/q5uGsou0JOdh94bfvQlr.woff
+/usr/lib64/R/library/bslib/fonts/07d40e985ad7c747025dabb9f22142c4.woff2
+/usr/lib64/R/library/bslib/fonts/1Ptug8zYS_SKggPNyC0ITw.woff2
+/usr/lib64/R/library/bslib/fonts/1Ptug8zYS_SKggPNyCAIT5lu.woff2
+/usr/lib64/R/library/bslib/fonts/1Ptug8zYS_SKggPNyCIIT5lu.woff2
+/usr/lib64/R/library/bslib/fonts/1Ptug8zYS_SKggPNyCMIT5lu.woff2
+/usr/lib64/R/library/bslib/fonts/1Ptug8zYS_SKggPNyCkIT5lu.woff2
+/usr/lib64/R/library/bslib/fonts/1f5e011d6aae0d98fc0518e1a303e99a.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKcQ72j00.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKcg72j00.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKcw72j00.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKew72j00.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKfA72j00.woff2
+/usr/lib64/R/library/bslib/fonts/4iCs6KVjbNBYlgoKfw72.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjsGyN.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2
+/usr/lib64/R/library/bslib/fonts/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2
+/usr/lib64/R/library/bslib/fonts/626330658504e338ee86aec8e957426b.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7jsDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7ksDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDI.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7osDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7qsDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7rsDJT9g.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qN67lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNK7lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNa7lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2
+/usr/lib64/R/library/bslib/fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lqDY.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmRduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmhduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwkxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmRduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmhduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwkxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmBduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmRduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmhduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmxduz8A.woff2
+/usr/lib64/R/library/bslib/fonts/CSR54z1Qlv-GDxkbKVQ_dFsvWNReuQ.woff2
+/usr/lib64/R/library/bslib/fonts/CSR54z1Qlv-GDxkbKVQ_dFsvWNpeudwk.woff2
+/usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_fO4KTet_.woff2
+/usr/lib64/R/library/bslib/fonts/CSR64z1Qlv-GDxkbKVQ_fOAKTQ.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvQlMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvUlMI.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvXlMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvYlMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvZlMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvalMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_QiYsKILxRpg3hIP6sJ7fM7PqlONvblMIXxw.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlM-vWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlMOvWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlMevWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlMuvWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlOevWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2
+/usr/lib64/R/library/bslib/fonts/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPuvWjMY.woff2
+/usr/lib64/R/library/bslib/fonts/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2
+/usr/lib64/R/library/bslib/fonts/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2
+/usr/lib64/R/library/bslib/fonts/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2
+/usr/lib64/R/library/bslib/fonts/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2
+/usr/lib64/R/library/bslib/fonts/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fBBc4.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfBBc4.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu4WxKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu4mxK.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu5mxKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu72xKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu7GxKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu7WxKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/KFOmCnqEu92Fr1Mu7mxKOzY.woff2
+/usr/lib64/R/library/bslib/fonts/QGYpz_kZZAGCONcK2A4bGOj8mNhN.woff2
+/usr/lib64/R/library/bslib/fonts/S6u8w4BMUTPHjxsAUi-qJCY.woff2
+/usr/lib64/R/library/bslib/fonts/S6u8w4BMUTPHjxsAXC-q.woff2
+/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh6UVSwaPGR_p.woff2
+/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh6UVSwiPGQ.woff2
+/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh7USSwaPGR_p.woff2
+/usr/lib64/R/library/bslib/fonts/S6u9w4BMUTPHh7USSwiPGQ.woff2
+/usr/lib64/R/library/bslib/fonts/S6uyw4BMUTPHjx4wXg.woff2
+/usr/lib64/R/library/bslib/fonts/S6uyw4BMUTPHjxAwXjeu.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2
+/usr/lib64/R/library/bslib/fonts/XRXV3I6Li01BKofIMeaBXso.woff2
+/usr/lib64/R/library/bslib/fonts/XRXV3I6Li01BKofINeaB.woff2
+/usr/lib64/R/library/bslib/fonts/XRXV3I6Li01BKofIO-aBXso.woff2
+/usr/lib64/R/library/bslib/fonts/XRXV3I6Li01BKofIOOaBXso.woff2
+/usr/lib64/R/library/bslib/fonts/XRXV3I6Li01BKofIOuaBXso.woff2
+/usr/lib64/R/library/bslib/fonts/c2f002b3a87d3f9bfeebb23d32cfd9f8.woff2
+/usr/lib64/R/library/bslib/fonts/ee91700cdbf7ce16c054c2bb8946c736.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqW106F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWt06F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtU6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtk6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWu06F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuk6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWvU6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWxU6F15M.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2
+/usr/lib64/R/library/bslib/fonts/q5uGsou0JOdh94bfuQltOxU.woff2
+/usr/lib64/R/library/bslib/fonts/q5uGsou0JOdh94bfvQlt.woff2
 /usr/lib64/R/library/bslib/help/AnIndex
 /usr/lib64/R/library/bslib/help/aliases.rds
 /usr/lib64/R/library/bslib/help/bslib.rdb
@@ -868,6 +952,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/bslib/tests/testthat/helper-cache.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-css.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-files.R
+/usr/lib64/R/library/bslib/tests/testthat/helper-fill.R
 /usr/lib64/R/library/bslib/tests/testthat/helper-seed.R
 /usr/lib64/R/library/bslib/tests/testthat/test-bs-theme-preset-bootswatch.R
 /usr/lib64/R/library/bslib/tests/testthat/test-bs-theme-preset-builtin.R
