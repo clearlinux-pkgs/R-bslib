@@ -7,7 +7,7 @@
 #
 Name     : R-bslib
 Version  : 0.7.0
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/bslib_0.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bslib_0.7.0.tar.gz
 Summary  : Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'
